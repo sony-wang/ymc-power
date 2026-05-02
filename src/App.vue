@@ -1,12 +1,9 @@
-<!-- <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import DefaultLayout from './layouts/DefaultLayout.vue'
 </script>
 
 <template>
-  <HelloWorld />
-</template> -->
-
-
-<template>
-  <router-view />
+  <DefaultLayout>
+    <router-view />
+  </DefaultLayout>
 </template>

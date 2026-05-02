@@ -1,5 +1,54 @@
 {
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact Us"
+  },
   "home": {
-    "title": "Professional Power Supply Manufacturer"
+    "introduction": "Corporation Introduction",
+    "history": "HISTORY",
+    "historyContent": {
+      "01": "Ji Yien Electronic Co., Ltd. Was founded in 1998. We are the professional Adaptor & Transformer manufacturer.",
+      "02": "The space of factory in ping-Dong Taiwan is 1,800 sq meter.",
+      "03": "We have strong teams such as sales, resource, engineering development, QC, producing department, etc.",
+      "04": "We truly believe that the price, quality, delivery, and honest are the most important.",
+      "05": "We deeply hope we have the opportunity to serve our customers in the best way."
+    },
+    "mainproducts": "MAIN PRODUCTS",
+    "productsContent": {
+      "01": "AC/AC , AC/DC power Adaptor Linear , Switch , Power supplies , information Technology Equipment including electrical Equipment",
+      "02": "It’s suitable for the industry data products computer. Cell-phone products, Consumer’s type electric products, etc."
+    },
+    "capacity": "CAPACITY OF PRODUCT PER MONTH",
+    "capacityContent": "Factory Taiwan 100K purchase.",
+    "safetyApproval": "SAFETY AGENCY APPROVAL FOR POWER ADAPTOR",
+    "safetyApprovalContent": {
+      "01": "UL/CUL, Standard UL1950, UL1310, IEC950, CAS22.2950-M95",
+      "02": "CE certificates",
+      "03": "Taiwan BAMI Approval.",
+      "04": "Japan PSE Approval"
+    },
+    "products": "Product",
+    "acAdaptor": "AC ADAPTOR",
+    "acAdaptorContent": {
+      "01":"EI-35 SERIES",
+      "02":"EI-41 SERIES",
+      "03":"EI-48 SERIES",
+      "04":"EI-57 SERIES",
+      "05":"EI-66 SERIES"
+    },
+    "powerTransformer": "POWER TRANSFORMER",
+    "powerTransformerContent": {
+      "01":"CORE SIZE : EI-35 TO EI-133",
+      "02":"POWER RATING : 1.5VA TO 300VA"
+    },
+    "switchPowerSupply": "SWITCH POWER SUPPLY",
+    "switchPowerSupplyContent": {
+      "01":"YMC06-XY SERIES",
+      "02":"YMC18-XY SERIES",
+      "03":"YMC36-XY SERIES",
+      "04":"YMC60-XY SERIES"
+    }
   }
 }

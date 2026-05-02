@@ -1,5 +1,54 @@
 {
+  "nav": {
+    "home": "首頁",
+    "about": "關於",
+    "products": "產品",
+    "contact": "聯絡"
+  },
   "home": {
-    "title": "電源供應器專業製造"
+    "introduction": "公司介紹",
+    "history": "歷史沿革",
+    "historyContent": {
+      "01": "吉研電子股份有限公司成立於1998年，是專業的變壓器和電源供應器製造商。",
+      "02": "工廠位於台灣屏東，佔地1800平方公尺。",
+      "03": "我們擁有強大的團隊，包括銷售、資源、工程開發、品質控制、生產部門等。",
+      "04": "我們深信價格、品質、交貨和誠信是最重要的。",
+      "05": "我們衷心希望有機會以最佳的方式為客戶服務。"
+    },
+    "mainproducts": "主要產品",
+    "productsContent": {
+      "01": "AC/AC、AC/DC電源適配器，線性、開關電源供應器，資訊科技設備包括電氣設備",
+      "02": "適用於工業數據產品、電腦、手機產品、消費類型電氣產品等。"
+    },
+    "capacity": "每月產品產能",
+    "capacityContent": "台灣工廠每月100K採購。",
+    "safetyApproval": "電源適配器的安全機構認證",
+    "safetyApprovalContent": {
+      "01": "UL/CUL，標準UL1950、UL1310、IEC950、CAS22.2950-M95",
+      "02": "CE認證",
+      "03": "台灣BAMI認證",
+      "04": "日本PSE認證"
+    },
+    "products": "產品介紹",
+    "acAdaptor": "交流適配器",
+    "acAdaptorContent": {
+      "01":"EI-35系列",
+      "02":"EI-41系列",
+      "03":"EI-48系列",
+      "04":"EI-57系列",
+      "05":"EI-66系列"
+    },
+    "powerTransformer": "電源變壓器",
+    "powerTransformerContent": {
+      "01":"核心尺寸：EI-35至EI-133",
+      "02":"功率等級：1.5VA至300VA"
+    },
+    "switchPowerSupply": "開關電源供應器",
+    "switchPowerSupplyContent": {
+      "01":"YMC06-XY系列",
+      "02":"YMC18-XY系列",
+      "03":"YMC36-XY系列",
+      "04":"YMC60-XY系列"
+    }
   }
 }
