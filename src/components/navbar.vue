@@ -1,22 +1,22 @@
 <template>
-  <fwb-navbar class="ymc-navbar X!border-[#17363b] X!bg-[#0d2428e5]">
+  <fwb-navbar class="ymc-navbar fixed top-0 right-0 left-0 z-50 X!border-[#17363b] X!bg-[#0d2428e5]">
     <template #logo>
-      <fwb-navbar-logo alt="吉穎電機Logo" :image-url="logo" link="#">
+      <fwb-navbar-logo alt="吉穎電機Logo" :image-url="logo" link="#" @click.prevent="scrollToSection('home')">
         <!-- YMC Power -->
       </fwb-navbar-logo>
     </template>
     <template #default="{isShowMenu}">
       <fwb-navbar-collapse :is-show-menu="isShowMenu">
-        <fwb-navbar-link is-active link="#">
+        <fwb-navbar-link is-active link="#home" @click.prevent="scrollToSection('home')">
           {{ t('nav.home') }}
         </fwb-navbar-link>
-        <fwb-navbar-link link="#">
+        <fwb-navbar-link link="#about" @click.prevent="scrollToSection('about')">
           {{ t('nav.about') }}
         </fwb-navbar-link>
-        <fwb-navbar-link link="#">
+        <fwb-navbar-link link="#products" @click.prevent="scrollToSection('products')">
           {{ t('nav.products') }}
         </fwb-navbar-link>
-        <fwb-navbar-link link="#">
+        <fwb-navbar-link link="#contact" @click.prevent="scrollToSection('contact')">
           {{ t('nav.contact') }}
         </fwb-navbar-link>
         <li class="md:flex md:items-center">
@@ -95,6 +95,25 @@ const languageLabel = computed(() => route.params.lang === 'zh-TW' ? 'language' 
 
 function changeLang(lang) {
   router.push(`/${lang}`)
+}
+
+function scrollToSection(id) {
+  if (id === 'home') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    history.replaceState(null, '', `${location.pathname}${location.search}`)
+    return
+  }
+
+  const target = document.getElementById(id)
+  const navbar = document.querySelector('.ymc-navbar')
+
+  if (!target) return
+
+  const navbarHeight = navbar?.getBoundingClientRect().height ?? 0
+  const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight
+
+  window.scrollTo({ top, behavior: 'smooth' })
+  history.replaceState(null, '', `#${id}`)
 }
 </script>
 

@@ -21,11 +21,12 @@ const pictures = [
 
 <template>
   <!-- 輪播圖區塊 -->
-  <div class="mx-auto w-full px-4 pt-6 sm:px-6 lg:px-8">
+  <div id="home" class="mx-auto w-full px-4 pt-6 sm:px-6 lg:px-8">
     <fwb-carousel no-indicators no-controls :pictures="pictures" />
   </div>
   <!-- 公司介紹 -->
   <section
+    id="about"
     class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-6 px-6 py-20"
   >
     <h1>{{ t("home.introduction") }}</h1>
@@ -92,6 +93,7 @@ const pictures = [
 
     <!-- 產品介紹 -->
   <section
+    id="products"
     class="bg-teal-900 mx-auto flex _max-w-3xl flex-col items-center justify-center gap-6 px-6 py-20"
   >
     <h1 class="dark:text-white text-white">{{ t("home.products") }}</h1>
@@ -156,6 +158,30 @@ const pictures = [
     
   </section>
 
+  <section id="contact" class="flex flex-row justify-around p-8">
+    <div>
+      <p class="dark:text-gray-400 text-gray py-3">{{ t("home.contact") }}</p>
+      <p class="text-teal-800 dark:text-teal-800 text-5xl py-3">
+        {{ t("home.contactContent.01") }}
+      </p>
+      <p class="dark:text-gray-400 text-gray-400">
+        {{ t("home.contactContent.02") }}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 w-1/2">
+      <fwb-alert border class="w-full text-left bg-teal-50 dark:bg-teal-50 text-teal-900 dark:text-teal-900 border-teal-800 dark:border-teal-800">
+          lee@ymcpower.com.tw
+      </fwb-alert>
+      <fwb-alert border class="w-full text-left bg-teal-50 dark:bg-teal-50 text-teal-900 dark:text-teal-900 border-teal-800 dark:border-teal-800">
+          +886 8 7802332
+      </fwb-alert>
+      <fwb-alert border class="w-full text-left bg-teal-50 dark:bg-teal-50 text-teal-900 dark:text-teal-900 border-teal-800 dark:border-teal-800">
+          {{ t("home.contactContent.03") }}
+      </fwb-alert>
+    </div>
+
+  </section>
 
   <!-- <section class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-6 px-6 py-20">
     <h1>{{ t('home.title') }}</h1>

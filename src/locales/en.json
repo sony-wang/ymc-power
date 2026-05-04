@@ -49,6 +49,12 @@
       "02":"YMC18-XY SERIES",
       "03":"YMC36-XY SERIES",
       "04":"YMC60-XY SERIES"
+    },
+    "contact": "Contact",
+    "contactContent": {
+      "01":"Need power specification discussion or quotation?",
+      "02":"Please provide input voltage, output voltage/current, plug type, estimated quantity and target market for quick evaluation.",
+      "03":"No. 17-8, Datong Farm, Zhutian Township, Pingtung County 911, Taiwan (R.O.C.)"
     }
   }
 }
