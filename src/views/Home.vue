@@ -1,5 +1,6 @@
 <script setup>
 import { useI18n } from "vue-i18n";
+import { useRoute, useRouter } from "vue-router";
 import {
   FwbAlert,
   FwbCarousel,
@@ -13,10 +14,22 @@ import {
 import {} from "flowbite-vue";
 
 const { t } = useI18n();
+const route = useRoute();
+const router = useRouter();
 
 const pictures = [
   { src: "../src/assets/images/banner-carousel.png", alt: "banner" },
 ];
+
+function goToProducts(productType) {
+  router.push({
+    name: "products",
+    params: {
+      lang: route.params.lang,
+      productType,
+    },
+  });
+}
 </script>
 
 <template>
@@ -106,9 +119,14 @@ const pictures = [
       class="product-card w-sm"
     >
       <div class="p-5">
-        <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {{ t("home.acAdaptor") }}
-        </h5>
+        <div class="flex justify-between gap-4">
+          <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {{ t("home.acAdaptor") }}
+          </h5>
+          <div>
+            <fwb-button gradient="teal" @click="goToProducts('acAdaptor')">{{ t("home.more") }}</fwb-button>
+          </div>
+        </div>
         <ul class="font-normal text-gray-700 dark:text-gray-400 grid grid-cols-2 gap-4">
           <li>{{ t("home.acAdaptorContent.01") }}</li>
           <li>{{ t("home.acAdaptorContent.02") }}</li>
@@ -125,9 +143,14 @@ const pictures = [
       class="product-card w-sm"
     >
       <div class="p-5">
-        <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {{ t("home.powerTransformer") }}
-        </h5>
+        <div class="flex justify-between gap-4">
+          <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {{ t("home.powerTransformer") }}
+          </h5>
+          <div>
+            <fwb-button gradient="teal" @click="goToProducts('powerTransformer')">{{ t("home.more") }}</fwb-button>
+          </div>
+        </div>
         <ul class="font-normal text-gray-700 dark:text-gray-400 grid grid-cols-1 gap-4">
           <li>{{ t("home.powerTransformerContent.01") }}</li>
           <li>{{ t("home.powerTransformerContent.02") }}</li>
@@ -141,9 +164,14 @@ const pictures = [
       class="product-card w-sm"
     >
       <div class="p-5">
-        <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {{ t("home.switchPowerSupply") }}
-        </h5>
+        <div class="flex justify-between gap-4">
+          <h5 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {{ t("home.switchPowerSupply") }}
+          </h5>
+          <div>
+            <fwb-button gradient="teal" @click="goToProducts('switchPowerSupply')">{{ t("home.more") }}</fwb-button>
+          </div>
+        </div>
         <ul class="font-normal text-gray-700 dark:text-gray-400 grid grid-cols-2 gap-4">
           <li>{{ t("home.switchPowerSupplyContent.01") }}</li>
           <li>{{ t("home.switchPowerSupplyContent.02") }}</li>
@@ -158,7 +186,7 @@ const pictures = [
     
   </section>
 
-  <section id="contact" class="flex flex-row justify-around p-8">
+  <section id="contact" class="flex flex-row justify-around p-12">
     <div>
       <p class="dark:text-gray-400 text-gray py-3">{{ t("home.contact") }}</p>
       <p class="text-teal-800 dark:text-teal-800 text-5xl py-3">
@@ -171,13 +199,13 @@ const pictures = [
 
     <div class="grid grid-cols-1 gap-4 w-1/2">
       <fwb-alert border class="w-full text-left bg-teal-50 dark:bg-teal-50 text-teal-900 dark:text-teal-900 border-teal-800 dark:border-teal-800">
-          lee@ymcpower.com.tw
+          <a href="mailto:lee@ymcpower.com.tw">lee@ymcpower.com.tw</a>
       </fwb-alert>
       <fwb-alert border class="w-full text-left bg-teal-50 dark:bg-teal-50 text-teal-900 dark:text-teal-900 border-teal-800 dark:border-teal-800">
-          +886 8 7802332
+          <a href="tel:+88687802332">+886 8 7802332</a>
       </fwb-alert>
       <fwb-alert border class="w-full text-left bg-teal-50 dark:bg-teal-50 text-teal-900 dark:text-teal-900 border-teal-800 dark:border-teal-800">
-          {{ t("home.contactContent.03") }}
+        <a href="https://maps.app.goo.gl/A1i8uBJfzGMZfpuz8" target="_blank" rel="noopener noreferrer">{{ t("home.contactContent.03") }}</a>
       </fwb-alert>
     </div>
 

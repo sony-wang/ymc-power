@@ -29,7 +29,7 @@
       "03": "Taiwan BAMI Approval.",
       "04": "Japan PSE Approval"
     },
-    "products": "Product",
+    "products": "Products",
     "acAdaptor": "AC ADAPTOR",
     "acAdaptorContent": {
       "01":"EI-35 SERIES",
@@ -50,11 +50,23 @@
       "03":"YMC36-XY SERIES",
       "04":"YMC60-XY SERIES"
     },
+    "more": "More",
     "contact": "Contact",
     "contactContent": {
-      "01":"Need power specification discussion or quotation?",
+      "01":"Need Power Specification Discussion or Quotation?",
       "02":"Please provide input voltage, output voltage/current, plug type, estimated quantity and target market for quick evaluation.",
       "03":"No. 17-8, Datong Farm, Zhutian Township, Pingtung County 911, Taiwan (R.O.C.)"
     }
+  },
+  "products":{
+    "acAdaptor": "AC ADAPTOR",
+    "powerTransformer": "POWER TRANSFORMER",
+    "powerTransformerContent": {
+      "01":"CHANNEL FRAME POWER TRANSFORMERS & PIN TYPE POWER TRANSFORMERS",
+      "02":"CORE SIZE : EI-35 TO EI-133",
+      "03":"POWER RATING : 1.5VA TO 300VA",
+      "04":"INSULATION CONSTRUCTION MEETS UL or EUROPEAN 3.75KV DIELECTRIC STRENGTH REQUIREMENT."
+    },
+    "switchPowerSupply": "SWITCH POWER SUPPLY"
   }
 }

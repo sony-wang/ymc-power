@@ -1,22 +1,40 @@
 <template>
   <fwb-navbar class="ymc-navbar fixed top-0 right-0 left-0 z-50 X!border-[#17363b] X!bg-[#0d2428e5]">
     <template #logo>
-      <fwb-navbar-logo alt="吉穎電機Logo" :image-url="logo" link="#" @click.prevent="scrollToSection('home')">
+      <fwb-navbar-logo
+        alt="吉穎電機Logo"
+        :image-url="logo"
+        :link="homeSectionLink('home')"
+        @click.prevent="goToHomeSection('home')"
+      >
         <!-- YMC Power -->
       </fwb-navbar-logo>
     </template>
     <template #default="{isShowMenu}">
       <fwb-navbar-collapse :is-show-menu="isShowMenu">
-        <fwb-navbar-link is-active link="#home" @click.prevent="scrollToSection('home')">
+        <fwb-navbar-link
+          is-active
+          :link="homeSectionLink('home')"
+          @click.prevent="goToHomeSection('home')"
+        >
           {{ t('nav.home') }}
         </fwb-navbar-link>
-        <fwb-navbar-link link="#about" @click.prevent="scrollToSection('about')">
+        <fwb-navbar-link
+          :link="homeSectionLink('about')"
+          @click.prevent="goToHomeSection('about')"
+        >
           {{ t('nav.about') }}
         </fwb-navbar-link>
-        <fwb-navbar-link link="#products" @click.prevent="scrollToSection('products')">
+        <fwb-navbar-link
+          :link="homeSectionLink('products')"
+          @click.prevent="goToHomeSection('products')"
+        >
           {{ t('nav.products') }}
         </fwb-navbar-link>
-        <fwb-navbar-link link="#contact" @click.prevent="scrollToSection('contact')">
+        <fwb-navbar-link
+          :link="homeSectionLink('contact')"
+          @click.prevent="goToHomeSection('contact')"
+        >
           {{ t('nav.contact') }}
         </fwb-navbar-link>
         <li class="md:flex md:items-center">
@@ -92,15 +110,41 @@ const router = useRouter()
 const { t } = useI18n()
 
 const languageLabel = computed(() => route.params.lang === 'zh-TW' ? 'language' : '語言')
+const currentLang = computed(() => route.params.lang || 'zh-TW')
+const homePath = computed(() => `/${currentLang.value}`)
 
 function changeLang(lang) {
-  router.push(`/${lang}`)
+  router.push({
+    name: route.name,
+    params: {
+      ...route.params,
+      lang,
+    },
+    query: route.query,
+    hash: route.hash,
+  })
+}
+
+function homeSectionLink(id) {
+  return id === 'home' ? homePath.value : `${homePath.value}#${id}`
+}
+
+async function goToHomeSection(id) {
+  const hash = id === 'home' ? '' : `#${id}`
+
+  if (route.name !== 'home') {
+    await router.push({ name: 'home', params: { lang: currentLang.value }, hash })
+    requestAnimationFrame(() => scrollToSection(id))
+    return
+  }
+
+  scrollToSection(id)
 }
 
 function scrollToSection(id) {
   if (id === 'home') {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    history.replaceState(null, '', `${location.pathname}${location.search}`)
+    history.replaceState(null, '', homePath.value)
     return
   }
 
@@ -113,7 +157,7 @@ function scrollToSection(id) {
   const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight
 
   window.scrollTo({ top, behavior: 'smooth' })
-  history.replaceState(null, '', `#${id}`)
+  history.replaceState(null, '', `${homePath.value}#${id}`)
 }
 </script>
 
